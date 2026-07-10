@@ -6,7 +6,7 @@ export default function Projects() {
     <section className="section" id="projects">
       <div className="section-heading">
         <p>Projects</p>
-        <h2>Selected e-commerce websites.</h2>
+        <h2>Selected websites and web applications.</h2>
       </div>
       <div className="projects-grid">
         {projects.map((project) => (

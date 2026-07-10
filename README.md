@@ -1,130 +1,60 @@
-# Edward Somera React Portfolio
+# Edward Somera Portfolio
 
-A React + Vite portfolio website for Edward C. Somera.
+A responsive one-page React and Vite portfolio for Edward Somera.
 
-## Included
+## Live URL
 
-- React + Vite setup
-- Responsive portfolio layout
-- Sections for hero, about, skills, experience, projects, and contact
-- Downloadable CV in `public/assets/Edward_Somera_CV.pdf`
-- GitHub Pages deployment guide
+`https://edwardsomerawebdev.github.io/`
 
-## Run locally
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open the local URL shown in your terminal.
-
-## Build for production
+## Production build
 
 ```bash
 npm run build
+npm run preview
 ```
-
-The production files will be generated in the `dist` folder.
 
 ## Deploy to GitHub Pages
 
-### Option 1: Deploy using GitHub Actions
+This project includes an automatic GitHub Actions workflow at:
 
-Create a file:
+`.github/workflows/deploy.yml`
 
-```text
-.github/workflows/deploy.yml
+### First deployment
+
+1. Create a public GitHub repository named exactly:
+
+   `EdwardSomeraWebDev.github.io`
+
+2. Upload or push the contents of this project to the repository's `main` branch.
+3. Open the repository on GitHub.
+4. Go to **Settings → Pages**.
+5. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+6. Open the **Actions** tab and wait for the "Deploy portfolio to GitHub Pages" workflow to finish.
+7. Visit `https://edwardsomerawebdev.github.io/`.
+
+Every future push to `main` automatically rebuilds and republishes the website.
+
+## Suggested Git commands
+
+```bash
+git init
+git add .
+git commit -m "Deploy portfolio"
+git branch -M main
+git remote add origin https://github.com/EdwardSomeraWebDev/EdwardSomeraWebDev.github.io.git
+git push -u origin main
 ```
 
-Paste this:
+## Project notes
 
-```yml
-name: Deploy React Portfolio
-
-on:
-  push:
-    branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-Then go to your GitHub repo:
-
-1. Settings
-2. Pages
-3. Source: GitHub Actions
-4. Push your code to `main`
-
-### Option 2: Deploy with Vercel or Netlify
-
-Import the repository and use:
-
-```text
-Build command: npm run build
-Output folder: dist
-```
-
-## Important for GitHub project pages
-
-If your repository is not named `yourusername.github.io`, you may need to update the asset paths or add a Vite base path.
-
-Example for repo named `edward-react-portfolio`, create or edit `vite.config.js`:
-
-```js
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-export default defineConfig({
-  plugins: [react()],
-  base: '/edward-react-portfolio/'
-});
-```
-
-For a user site repo like `EdwardSomeraWebDev.github.io`, use:
-
-```js
-base: '/'
-```
+- The downloadable CV is stored at `public/assets/Edward_Somera_CV.pdf`.
+- The production `dist` directory is generated automatically and is intentionally ignored by Git.
+- The contact form currently uses FormSubmit.
+- Replace any placeholder LinkedIn URL in the portfolio when your final profile URL is available.

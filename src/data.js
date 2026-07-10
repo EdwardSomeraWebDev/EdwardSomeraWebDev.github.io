@@ -34,7 +34,7 @@ export const experiences = [
   {
     company: 'Freelance',
     title: 'Freelance Web Developer',
-    date: 'July 25, 2025 - Present',
+    date: 'July 2025 - Present',
     details: [
       'Created and maintained several e-commerce websites for a Canadian client.',
       'Built responsive, user-friendly, SEO-friendly pages and product-focused layouts.',
@@ -89,33 +89,36 @@ export const experiences = [
 
 export const projects = [
   {
-    name: 'Sovereign Duty Free',
-    url: 'https://sovereigndutyfree.com/',
-    type: 'E-commerce Website',
-    description: 'Canadian e-commerce website with product-focused layout, responsive pages, and brand-aligned design.'
+    name: 'Sovereign Duty Free', url: 'https://sovereigndutyfree.com/', type: 'Wholesale E-commerce',
+    description: 'Wholesale platform for a Canadian First Nations vape and smoke distributor with retailer-focused purchasing flows.'
   },
   {
-    name: 'Sovereign Smoke',
-    url: 'https://sovereignsmoke.ca/',
-    type: 'E-commerce Website',
-    description: 'Responsive online store experience built for a Canadian retail brand.'
+    name: 'Sovereign Smoke', url: 'https://sovereignsmoke.ca/', type: 'Retail E-commerce',
+    description: 'Responsive Canadian online store with category merchandising, nationwide shipping content and conversion-focused UX.'
   },
   {
-    name: 'Sovereign Cigarettes',
-    url: 'https://sovereigncigarettes.com/',
-    type: 'E-commerce Website',
-    description: 'Product catalog and shopping-focused website with clean navigation and mobile-friendly structure.'
+    name: 'Sovereign Cigarettes', url: 'https://sovereigncigarettes.com/', type: 'Retail E-commerce',
+    description: 'Mobile-friendly tobacco storefront with product bundles, brand browsing and streamlined shopping flows.'
   },
   {
-    name: 'Toro Vape',
-    url: 'https://torovape.com/',
-    type: 'E-commerce Website',
-    description: 'Modern e-commerce website with conversion-focused sections and responsive design.'
+    name: 'Mount Solar Power', url: 'https://mountsolarpower.com/', type: 'Solar Energy Website',
+    description: 'Lead-generation website presenting residential and commercial solar services through a professional responsive interface.'
   },
   {
-    name: 'Sativa Bliss',
-    url: 'https://sativabliss.ca/',
-    type: 'E-commerce Website',
-    description: 'Canadian e-commerce website with polished landing sections and product presentation.'
+    name: 'Coefficients', url: 'https://coefficientsco.com/', type: 'Corporate Website',
+    description: 'Corporate website presenting outsourcing, digital solutions, training and skills-development services.'
   }
+  ,{
+    name: 'Toro Vape', url: 'https://torovape.com/', type: 'Retail E-commerce',
+    description: 'Dark-themed Canadian vape storefront with location-specific shopping, product discovery, subscriptions and conversion-focused merchandising.'
+  },
+  {
+    name: 'Sativa Bliss', url: 'https://sativabliss.ca/', type: 'Multi-store E-commerce',
+    description: 'Multi-location cannabis retail website with store-specific menus, product browsing, membership pricing and custom TechPOS integration work.'
+  },
+  {
+    name: 'HaulSaver', url: 'https://haulsaver.com/', type: 'Reverse Marketplace',
+    description: 'Shipping marketplace connecting shippers with carriers through shipment requests, provider offers, role-based onboarding and transaction workflows.'
+  }
+
 ];
