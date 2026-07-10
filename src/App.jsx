@@ -150,7 +150,7 @@ export default function App(){
       <button className="menu-toggle" onClick={()=>setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen?<X/>:<Menu/>}</button>
       <nav className={menuOpen?'open':''}>
         {['About','Skills','Projects','Experience','Contact'].map(i=><a key={i} href={`#${i.toLowerCase()}`} onClick={close}>{i}</a>)}
-        <a className="button button-outline nav-cta" href="/assets/Edward_Somera_CV.pdf" download>Download CV <Download size={15}/></a>
+        <a className="button button-outline nav-cta" href={`${import.meta.env.BASE_URL}assets/Edward_Somera_CV.pdf`} download>Download CV <Download size={15}/></a>
       </nav>
     </header>
 
