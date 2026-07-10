@@ -534,12 +534,21 @@ nav > a {
 }
 .project-haulsaver {
   background: linear-gradient(145deg, #0b0908, #5a402e);
+  background-image: url("../src/assets/haulsaver.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .project-sativa {
   background: radial-gradient(circle at 48% 50%, #5a402e, #1d1510 52%, #050403);
+  background-image: url("../src/assets/sativabliss.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .project-toro {
   background: radial-gradient(circle at 55% 35%, #6a4d36, #241a13 52%, #050403);
+  background-image: url("../src/assets/torovape.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .project-body {
   padding: 28px 28px 30px;
@@ -891,18 +900,38 @@ footer {
 }
 .project-dutyfree {
   background: linear-gradient(145deg, #080706, #61452f);
+  background-image: url("../src/assets/sovereigndutyfree.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .project-smoke {
   background: radial-gradient(circle at 50% 35%, #60442f, #211710 58%, #030303);
+  background-image: url("../src/assets/sovereignsmoke.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .project-cigarettes {
   background: linear-gradient(145deg, #15100c, #4c3525 55%, #050403);
+  background-image: url("../src/assets/sovereigncigarettes.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .project-solar {
-  background: radial-gradient(circle at 65% 25%, #8d704e, #35261a 42%, #050403 78%);
+  background: radial-gradient(
+    circle at 65% 25%,
+    #8d704e,
+    #35261a 42%,
+    #050403 78%
+  );
+  background-image: url("../src/assets/mountsolarpower.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .project-coefficients {
   background: linear-gradient(135deg, #050403, #35261a 55%, #17100c);
+  background-image: url("../src/assets/coefficientsco.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .timeline-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -935,4 +964,17 @@ footer {
   .timeline-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Use authentic brand marks for the skills section. */
+.skill-icon img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.skill small {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.25;
 }
