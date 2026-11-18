@@ -1,6 +1,8 @@
 import {
   ArrowRight,
   CalendarDays,
+  ChartColumnIncreasing,
+  ScanBarcode,
   Code2,
   Download,
   ExternalLink,
@@ -15,6 +17,11 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import portrait from "./assets/edward-portrait.jpg";
+import coeffHomepage from "./assets/coeff-iq-homepage.png";
+import coeffDashboard from "./assets/coeff-iq-dashboard.png";
+
+import inventoryCatalog from "./assets/inventory-catalog.png";
+import inventoryRegister from "./assets/inventory-register.png";
 
 const skills = [
   {
@@ -132,10 +139,10 @@ const projects = [
 const experience = [
   {
     dates: "Jul 2025 – Present",
-    role: "Freelance Web Developer",
-    company: "Freelance",
+    role: "Web Developer",
+    company: "Coefficients Co. Ltd.",
     details: [
-      "Design, develop and maintain e-commerce websites for a Canadian client, with a focus on responsive layouts, usability, product presentation and conversion-friendly experiences.",
+      "Built Coeff IQ for agencies reporting on client websites and developed a multi-store inventory and point-of-sale application.",
       "Built and supported online storefronts for Sovereign Duty Free, Sovereign Smoke, Sovereign Cigarettes, Toro Vape and Sativa Bliss.",
       "Implement custom sections, landing pages, product pages, navigation, forms, promotional content and CMS updates.",
       "Handle troubleshooting, browser and device testing, performance checks and SEO-friendly content improvements.",
@@ -236,9 +243,7 @@ export default function App() {
             <h1>Edward Somera</h1>
             <h2>Web Developer</h2>
             <p>
-              I build responsive, accessible and performance-focused websites,
-              e-commerce stores and web applications using modern front-end
-              technologies and WordPress.
+              I build web applications and e-commerce stores. At Coefficients, my recent work spans marketing analytics, multi-store inventory and point-of-sale software.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#projects">
@@ -380,17 +385,41 @@ export default function App() {
         </section>
 
         <section className="section bordered" id="projects">
-          <div className="section-heading-row">
-            <SectionTitle>Projects</SectionTitle>
-            <a
-              className="text-link"
-              href="https://edwardsomerawebdev.github.io"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View all projects <ArrowRight size={15} />
-            </a>
+          <SectionTitle>Featured projects</SectionTitle>
+          <div className="featured-projects">
+            <article className="featured-work analytics-work">
+              <ChartColumnIncreasing size={32} aria-hidden="true" />
+              <small>Marketing analytics</small>
+              <h3>Coeff IQ</h3>
+              <p>I built Coeff IQ so agencies can see how each client’s website
+                and marketing channels are performing. The dashboard compares
+                reporting periods, breaks down traffic sources and explains
+                changes in plain language.</p>
+              <ScreenshotGallery images={[
+                  [coeffHomepage, "Product homepage", "Coeff IQ homepage with its sample executive summary and marketing integrations", 1902, 907],
+                  [coeffDashboard, "Client dashboard", "Client overview showing a sessions trend, traffic sources and AI insights", 1903, 952],
+                ]} />
+              <div className="tags"><span>Cloudflare</span><span>PostgreSQL</span><span>API integrations</span></div>
+              <a href="https://coeffiq.com/" className="text-link" target="_blank" rel="noreferrer">
+                Visit Coeff IQ <ExternalLink size={15} />
+              </a>
+            </article>
+            <article className="featured-work inventory-work">
+              <ScanBarcode size={32} aria-hidden="true" />
+              <small>Retail &amp; wholesale operations</small>
+              <h3>Inventory &amp; POS</h3>
+              <p>I built a browser POS where cashiers scan items and record sales.
+                Each sale updates the stock ledger, so the supply team can see
+                which products are running low and which stores need replenishment.</p>
+              <ScreenshotGallery images={[
+                [inventoryCatalog, "Product catalog", "Catalog with product filters, CSV import and active product listings", 1888, 948],
+                [inventoryRegister, "POS register", "Etobicoke register with barcode search, an out-of-stock warning and the checkout cart", 1903, 949],
+              ]} />
+              <div className="tags"><span>React</span><span>NestJS</span><span>PostgreSQL</span></div>
+              <small className="project-status">Internal application · Tested locally</small>
+            </article>
           </div>
+          <h3 className="client-projects-title">Client projects</h3>
           <div className="projects-grid">
             {projects.map((p) => (
               <article className="project-card" key={p.title}>
@@ -493,6 +522,20 @@ export default function App() {
     </div>
   );
 }
+function ScreenshotGallery({ images }) {
+  return (
+    <div className="project-gallery">
+      {images.map(([src, label, alt, width, height]) => (
+        <a key={label} href={src} target="_blank" rel="noreferrer"
+          aria-label={`Open full-size ${label.toLowerCase()} screenshot in a new tab`}>
+          <img src={src} alt={alt} width={width} height={height} loading="lazy" />
+          <span>{label}<ExternalLink size={14} aria-hidden="true" /></span>
+        </a>
+      ))}
+    </div>
+  );
+}
+
 function SectionTitle({ children }) {
   return <h2 className="section-title">{children}</h2>;
 }
